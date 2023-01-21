@@ -8,7 +8,7 @@ const app = express();
 app.use(
   '/',
   createProxyMiddleware({
-    target: 'http://www.example.org/secret',
+    target: 'https://jsonplaceholder.typicode.com/',
     changeOrigin: true,
   })
 );

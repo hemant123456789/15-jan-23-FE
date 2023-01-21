@@ -3,7 +3,8 @@ import axios from 'axios';
 // Next we make an 'instance' of it
 const instance = axios.create({
     // .. where we make our configurations
-    baseURL: 'https://jsonplaceholder.typicode.com'
+    baseURL: process.env.REACT_APP_BASE_URL
+
 });
 
 instance.defaults.headers.post['Content-Type'] = 'application/json';
