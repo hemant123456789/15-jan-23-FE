@@ -1,16 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react'
-import axios from 'axios';
+
+import useApi from './hooks/useApi';
 
 function App() {
-
+  const { httpHandle } = useApi();
   React.useEffect(() => {
-   // console.log(process.env.REACT_APP_BASE_URL)
-   axios.get(`${process.env.REACT_APP_BASE_URL}/todos`).then((result) => {
-    console.log(result);
-   })
-  })
+    httpHandle('posts', 'http-post', {}).then(response => {
+      console.log(response)
+    })
+
+
+  });
   return (
     <div className="App">
       <header className="App-header">
